@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Cernean/REST-Rant-Project/issues"
   },
-  "homepage": "https://github.com/Cernean/REST-Rant-Project#readme"
+  "homepage": "https://github.com/Cernean/REST-Rant-Project#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
