@@ -1,0 +1,19 @@
+{
+  "name": "rest-rant-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cernean/REST-Rant-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cernean/REST-Rant-Project/issues"
+  },
+  "homepage": "https://github.com/Cernean/REST-Rant-Project#readme"
+}
