@@ -1,4 +1,4 @@
-places = [{
+let places = [{
     name: 'H-Thai-ML',
     city: 'Seattle',
     state: 'WA',
