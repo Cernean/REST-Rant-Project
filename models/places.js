@@ -1,4 +1,4 @@
-let places = [{
+module.exports = [{
     name: 'H-Thai-ML',
     city: 'Seattle',
     state: 'WA',
@@ -12,4 +12,3 @@ let places = [{
     pic: '/images/strawberry-juice.jpg'
   }]
   
-  module.exports = places;
