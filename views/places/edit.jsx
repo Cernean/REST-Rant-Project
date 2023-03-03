@@ -16,7 +16,7 @@ function edit_form ({ place, index}) {
                 <label htmlFor="pic">Place Picture</label>
                 <input className="form-control" type="url" id="pic" name="pic" defaultValue={data.place.pic}/>
               </div>
-              <div className="form-group">
+              <div className="form-group col-sm-6">
                 <label htmlFor="city">City</label>
                 <input className="form-control" id="city" name="city" defaultValue={place.city} />
               </div>
