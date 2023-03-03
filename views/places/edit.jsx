@@ -29,7 +29,7 @@ function edit_form ({ place, index}) {
                 <input className="form-control" id="cuisines" name="cuisines" defaultValue={place.cuisine} required />
               </div>
               </div>
-              <input className="btn btn-primary" type="submit" value={"Update" + place.name} />
+              <input className="btn btn-primary" type="submit" defaultValue={"Update" + place.name} />
             </form>
           </main>
         </Def>
