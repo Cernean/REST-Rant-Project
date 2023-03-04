@@ -1,12 +1,10 @@
-
-//const places = require('../models/places.js')
-
 const router = require('express').Router()
 const db = require('../models')
 
 router.get('/', (req, res) => {
     db.Place.find()
     .then((places) => {
+      console.log(places)
       res.render('places/index', { places })
     })
     .catch(err => {
@@ -40,7 +38,6 @@ router.get('/:id', (req, res) => {
       res.render('error404')
   })
 })
-
 
 router.put('/:id', (req, res) => {
   res.send('PUT /places/:id stub')

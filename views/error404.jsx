@@ -1,7 +1,7 @@
 const React = require('react')
 const Def = require('./default')
 
-function error404 () {
+function NotFound () {
     return (
       <Def>
           <main>
@@ -14,4 +14,4 @@ function error404 () {
       </Def>
     )
   } 
-module.exports = error404
+module.exports = NotFound
