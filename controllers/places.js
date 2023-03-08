@@ -54,6 +54,7 @@ router.get('/:id', (req, res) => {
       res.render('error404')
   })
 })
+
 router.post('/:id/comment', (req, res) => {
   console.log(req.body)
   db.Place.findById(req.params.id)
@@ -74,7 +75,6 @@ router.post('/:id/comment', (req, res) => {
       res.render('error404')
   })
 })
-
 
 router.put('/:id', (req, res) => {
   res.send('PUT /places/:id stub')
