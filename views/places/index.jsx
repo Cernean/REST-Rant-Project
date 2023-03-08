@@ -3,6 +3,7 @@ const Def = require('../default')
 
 function index ({places}) {
   let placesFormatted = places.map((place) => {
+    console.log(place)
     return (
       <div className="col-sm-6">
         <h2>
