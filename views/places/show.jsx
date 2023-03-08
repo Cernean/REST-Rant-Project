@@ -25,7 +25,7 @@ function show (data) {
   return (
   <Def>
     <main>
-      <h1>{data.place.name}</h1>
+    <h1>{data.place.name}</h1>
         <div className="row">
           <div className="col-sm-6">
             <img src={data.place.pic} alt={data.place.name} />
