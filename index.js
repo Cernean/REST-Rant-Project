@@ -3,7 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const methodOverride = require('method-override')
 const app = express()
-const mongoose = require('mongoose')
+//const mongoose = require('mongoose')
 
 // Express Settings
 app.set('views', __dirname + '/views')
@@ -27,5 +27,5 @@ app.get('*', (req, res) => {
 
 // Listen for Connections
 app.listen(process.env.PORT, () => {
-    console.log(process.env.PORT)
+    //console.log(process.env.PORT)
 })

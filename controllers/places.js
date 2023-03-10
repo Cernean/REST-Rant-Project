@@ -4,7 +4,6 @@ const db = require('../models')
 router.get('/', (req, res) => {
     db.Place.find()
     .then((places) => {
-      console.log(places)
       res.render('places/index', { places })
     })
     .catch(err => {
@@ -14,27 +13,36 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  if (!req.body.pic) {
-    // Default image if one is not provided
-    req.body.pic = 'http://placekitten.com/400/400'
+  console.log(req.body);
+  if(req.body.pic == '') {
+    req.body.pic = '/images/2.jfif';
   }
   db.Place.create(req.body)
   .then(() => {
       res.redirect('/places')
   })
   .catch(err => {
-    if (err && err.name == 'ValidationError') {
-      let message = 'Validation Error: '
-      for (var field in err.errors) {
-          message += `${field} was ${err.errors[field].value}. `
-          message += `${err.errors[field].message}`
+      if (err && err.name == 'ValidationError') {
+          let message = "Validation Errors: ";
+
+          if (err && err.name == 'ValidationError') {
+            let message = 'Validation Error: '
+            for (var field in err.errors) {
+                message += ` ${field} was ${err.errors[field].value}. `
+                message += `${err.errors[field].message}`
+            }
+            console.log('Validation error message', message)
+            res.render('places/new', { message })
+          }
+          else {
+              res.render('error404')
+          }
+
+          res.render('places/new', { message });
       }
-      console.log('Validation error message', message)
-      res.render('places/new', { message })
-  }
-  else {
-      res.render('error404')
-  }
+      else {
+          res.render('error404')
+      }
   })
 })
 
@@ -45,7 +53,7 @@ router.get('/new', (req, res) => {
 router.get('/:id', (req, res) => {
   db.Place.findById(req.params.id)
   .populate('comments')
-  .then(place => {
+    .then(place => {
       console.log(place.comments)
       res.render('places/show', { place })
   })
@@ -55,12 +63,25 @@ router.get('/:id', (req, res) => {
   })
 })
 
+router.get('/:id/comment', (req, res) => {
+  console.log(req.body);
+  db.Place.findById(req.params.id)
+    .then(place => {
+      res.render('places/newcomment', { place });
+    })
+})
+
 router.post('/:id/comment', (req, res) => {
+  console.log("!!!!!!!!!!!!!!")
   console.log(req.body)
   db.Place.findById(req.params.id)
-  .then(place => {
+    .then(place => {
+      console.log("Place to add comment:")
+      console.log(place)
       db.Comment.create(req.body)
-      .then(comment => {
+        .then(comment => {
+          console.log("New comment:")
+          console.log(comment)
           place.comments.push(comment.id)
           place.save()
           .then(() => {

@@ -9,6 +9,9 @@ function NotFound () {
               <p>Oops, sorry, we can't find this page!</p>
               <div> 
               <img src="/images/kitten1.jpg" alt="Kitten" />
+              <div>
+              Cat by <a href="placekitten.com">placekitten</a>
+              </div>
               </div>
           </main>
       </Def>
