@@ -6,7 +6,7 @@ function edit_form ({place, id}) {
         <Def>
           <main>
             <h1>Edit Place</h1>
-            <form method="POST" action={`/places/${id}?_method=PUT`} >
+            <form method="POST" action={`/places/${data.place.id}?_method=PUT`} >
                 <div className="row">
                     <div className="form-group col-sm-6">
                         <label htmlFor="name">Place Name</label>
@@ -48,8 +48,16 @@ function edit_form ({place, id}) {
                             required
                             defaultValue={place.cuisines} />
                     </div>
-                </div>
-              <input className="btn btn-primary" type="submit" defaultValue={"Update" + place.name} />
+                    <div className="form-group col-sm-4">
+                        <label htmlFor="founded">Founded</label>
+                        <input className="form-control" 
+                          id="founded" 
+                          name="founded" 
+                          defaultValue={data.place.founded} 
+                        />
+                    </div>
+                   </div>
+              <input className="btn btn-primary" type="submit" defaultValue="Update Place"/>
             </form>
           </main>
         </Def>
