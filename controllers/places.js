@@ -50,6 +50,7 @@ router.get('/new', (req, res) => {
   res.render('places/new')
 })
 
+
 router.get('/:id', (req, res) => {
   db.Place.findById(req.params.id)
   .populate('comments')
@@ -59,7 +60,7 @@ router.get('/:id', (req, res) => {
   })
   .catch(err => {
       console.log('err', err)
-      res.render('error404')
+     res.render('error404')
   })
 })
 
